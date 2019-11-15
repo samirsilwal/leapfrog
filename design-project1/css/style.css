@@ -1,0 +1,7 @@
+.body-header-menu{
+    list-style-type: none;
+
+}
+.body-header-menu li{
+    display: inline;
+}
