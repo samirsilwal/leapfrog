@@ -1,7 +1,99 @@
-.body-header-menu{
+
+.breadcrumb{
     list-style-type: none;
+    text-transform: uppercase;
+}
+.breadcrumb li{
+    display: inline;
+}
+.breadcrumb li a{
+    text-decoration: none;
+    color: #808a89;
+}
+.breadcrumb li+li:before {
+    padding: 9px;
+    color: #898989;
+    content: "/\00a0";
+}
+.left-text{
+ color:#848e8f;
+ font-size: 24px;
+ font-weight: 700;
+ float: left;
+}
+.middle-image{
+  background-image: url(../images/slsider.jpg);
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 800px;
+  float: left;
+}
+.left-arrow{
+    float: right;
+    width: 50px;
+    height: 100%;
+    background-image: url(../images/right.jpg);
+    background-repeat: no-repeat;
 
 }
-.body-header-menu li{
-    display: inline;
+.right-arrow{
+    float: right;
+    width: 50px;
+    height: 100%;
+    background-image: url(../images/left.jpg);
+    background-repeat: no-repeat;
+
+
+}
+.list-images{
+    height: 92px;
+    width: 100%;
+    margin-top: 10px ;
+    
+}
+.query-image1{
+    background-image: url(../images/jquery.jpg);
+    float: left;
+    height: 92px;
+    width: 174px;
+}
+.query-image2{
+    background-image: url(../images/jquery.jpg);
+    float: left;
+    height: 92px;
+    margin-left:25px ;
+    width: 174px;
+}
+.query-image3{
+    background-image: url(../images/jquery.jpg);
+    float: left;
+    height: 92px;
+    margin-left:25px ;
+
+    width: 174px;
+}
+
+.query-image4{
+    background-image: url(../images/jquery.jpg);
+    float: left;
+    height: 92px;
+    margin-left:25px ;
+
+    width: 174px;
+}
+.query-image5{
+    background-image: url(../images/jquery.jpg);
+    float: left;
+    height: 92px;
+    margin-left:25px ;
+
+    width: 174px;
+}
+.query-image6{
+    background-image: url(../images/jquery.jpg);
+    float: left;
+    height: 92px;
+    margin-left:25px ;
+
+    width: 174px;
 }
