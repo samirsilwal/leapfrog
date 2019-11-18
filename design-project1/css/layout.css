@@ -5,8 +5,8 @@
 .header-wrapper{
     
     margin: 0 auto;
-    width: 1170px;  
-   
+    width: 78%;  
+   position: relative;
   
 }
 
@@ -80,7 +80,7 @@
 .body-header-wrapper{
    
     margin: 0 auto;
-    width: 1170px;  
+    width: 78%;  
       
 }
 .body-header-left{
@@ -94,7 +94,7 @@
 .body-content-wrapper{
     
     margin: 0 auto;
-    width: 1170px;  
+    width: 78%;  
    
 }
 .body-content{
@@ -102,10 +102,10 @@
     background-color:#f3f3f3 ;
 }
 .body-content-upper-div{
-    padding-top:50px ;
+    padding-top:5% ;
 }
 .body-content-lower-div{
-    margin-top: 71px;
+    margin-top: 5%;
     width:290.5px
 }
 .body-content-ld-left{
@@ -123,9 +123,10 @@
    
 }
 .body-content-ld-middle{
-    padding-left: 80px;
-    width:585px;
+    padding-left: 8%;
+    width:45%;
     float: left;
+    padding-right: 4%;
    
 }
 .middle-image-part{
@@ -182,8 +183,8 @@
     text-align: center;
 }
 .text-part{
-    margin-top: 10px;
-    margin-left: 12px;
+    margin-top: 2%;
+    margin-left: 2%;
     color:#7c8a8a;
     text-transform: uppercase;
 }
@@ -199,7 +200,7 @@
 
 
 .body-content-ld-right{
-    width: 292.5px;
+    width: 20%;
     float: left;
     
     
@@ -212,8 +213,8 @@
 
 .background-of-text{
     background-color: #f8f8f8;
-    margin-top: 5px;
-    padding:5px 5px;
+    margin-top: 1%;
+    padding:1% 1%;
 }
 .small-image{
     margin-left: 10px;
@@ -222,8 +223,8 @@
     color:#7e8a8a;
     font-weight: 700;
     font-size: 20px;
-    margin-left: 25px;
-    padding-left: 19px;
+    margin-left: 8%;
+    padding-left: 5%;
 }
 .body-middle-content{
     height: 850px;
@@ -231,10 +232,10 @@
 
 }
 .body-middle-content-inner{
-    width: 1170px;
+    width: 78%;
     margin: 0 auto;
     height: 100%;
-    padding-top: 180px;
+    padding-top: 10%;
 }
 .four-block-wrapper{
     height: 340px;
@@ -244,12 +245,12 @@
 }
 .box1{
     float: left;
-    width: 270px;
+    width: 20%;
     height: 100%;
     position: relative;
 }
 .upper-image-box1{
-   height: 310px;
+   height: 85%;
    width: 100%;
    background-image: url(../images/image.png);
 }
@@ -258,19 +259,19 @@
     bottom: 10px;
     left: 40px;
     height: 55px;
-    width:190px;
+    width:65%;
     background-image: url(../images/button.jpg);
 }
 
 .box2{
-    margin-left: 25px;
+    margin-left: 5%;
     float: left;
-    width: 270px;
+    width: 20%;
     height: 100%;
     position: relative;
 }
 .upper-image-box2{
-   height: 310px;
+   height:85%;
    width: 100%;
    background-image: url(../images/image.png);
 }
@@ -279,15 +280,15 @@
     bottom: 10px;
     left: 40px;
     height: 55px;
-    width:190px;
+    width:65%;
     background-image: url(../images/button.jpg);
 }
 
 
 .box3{
-    margin-left: 25px;
+    margin-left: 5%;
     float: left;
-    width: 270px;
+    width: 20%;
     height: 100%;
     position: relative;
 }
@@ -301,15 +302,15 @@
     bottom: 10px;
     left: 40px;
     height: 55px;
-    width:190px;
+    width:65%;
     background-image: url(../images/button.jpg);
 }
 
 
 .box4{
-    margin-left: 25px;
+    margin-left: 5%;
     float: left;
-    width: 270px;
+    width: 20%;
     height: 100%;
     position: relative;
 }
@@ -323,9 +324,10 @@
     bottom: 10px;
     left: 40px;
     height: 55px;
-    width:190px;
+    width:65%;
     background-image: url(../images/button.jpg);
 }
+
 .near-footer-content{
     width: 100%;
     height: 20px;
@@ -350,7 +352,6 @@
 
 .footer-main-container{
     clear: both;
-    margin-top: 25%;
     background: #76c7c1;
     height: 250px;
 }
