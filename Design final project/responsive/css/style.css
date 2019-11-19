@@ -1,0 +1,43 @@
+.image-overlap-text-left{
+    position: absolute;
+    bottom: 14.375em;
+    left:6.25em;
+  
+}
+.small-title{
+    font-family: 'Allerta';
+    color:white;
+    font-size: 1.125em;
+    letter-spacing: 0.1125em;
+    text-align:justify;
+}
+
+.big-title{
+    font-family: 'Allerta';
+    color:white;
+    text-transform: uppercase;
+    font-size: 2.475em;
+    font-weight: bold;
+    letter-spacing: 0.08em;
+    text-align:justify;
+}
+.image-overlap-text-right{
+    position: absolute;
+    bottom:16.6875em;
+    right:4.875em;
+}
+.image-overlap-text-right ul li{
+    padding: 5px;
+}
+.image-overlap-text-right ul li a{
+    text-decoration: none;
+}
+.image-overlap-text-right ul li div{
+    height: 6px;
+    width: 5px;
+    background:#212429 ;
+    border-style: solid;
+    border-color: white;
+    border-width: 1px;
+}
+

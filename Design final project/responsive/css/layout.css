@@ -1,0 +1,63 @@
+header{
+    background:#212429;
+    /* width:  102.375em; */
+
+}
+
+.container{
+    /* width: 93.407%; */
+    width:95.625em;
+    margin: 0 auto;
+    /* overflow: auto; */
+    position:relative;
+}
+
+
+
+.left-seperartor{
+    width:0.0625em;
+    float :left;
+}
+
+.left-section{
+    width: 1.25em;
+    /* background: red; */
+    margin-left: 1.25em;
+    margin-right: 1.25em;
+    margin-top: 1.25em;
+
+    float: left;
+}
+
+
+.middle-section{
+    /* width:3.922%; */
+    width: 9.5em;
+    float: left;
+    /* background:green; */
+    margin-left:40.6875em;
+    margin-right: 20em;
+    margin-top: 1.25em;
+}
+.logo1{
+    float:left
+}
+.logo2{
+    float:right;
+}
+.right-section{
+    width: 17.4125em;
+    float: right;
+    
+}
+.menu-icon{
+    float: left;
+    width: 1em;
+    margin-left: 1.2em;
+    margin-right: 1.2em;
+    margin-top: 1.25em;
+
+}
+
+
+
