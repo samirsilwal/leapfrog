@@ -1,0 +1,256 @@
+.image-overlap-text-left{
+    position: absolute;
+    bottom: 35%;
+    left:5.58%;
+  
+}
+
+.logo_design {
+    padding-bottom: 22px;
+    padding-top: 18px;
+    padding-left: auto;
+    padding-right: auto;
+    width: 10.3542%;
+    float: right;
+    padding-right: 26.566%;
+  
+}
+.small-title{
+    font-family: 'Allerta';
+    color:white;
+    font-size: 18px;
+    letter-spacing: 1.8px;
+    text-align:justify;
+}
+
+.big-title{
+    font-family: 'Allerta';
+    color:white;
+    text-transform: uppercase;
+    font-size: 41px;
+    font-weight: bold;
+    letter-spacing: 1.28px;
+    text-align:justify;
+}
+.image-overlap-text-right-boxes{
+    position: absolute;
+    bottom:40%;
+    right:80px;
+}
+.image-overlap-text-right-boxes ul li{
+    padding: 5px;
+}
+.image-overlap-text-right-boxes ul li a{
+    text-decoration: none;
+}
+.image-overlap-text-right-boxes ul li div{
+    height: 6px;
+    width: 5px;
+    background:#212429 ;
+    border-style: solid;
+    border-color: white;
+    border-width: 1px;
+}
+.overlay-upper-arrow{
+    position: absolute;
+    bottom:60%;
+    right:2.5%;
+}
+.overlay-down-arrow{
+    position: absolute;
+    bottom:22%;
+    right:2.5%;
+
+}
+.overlay-right-text{
+    position: absolute;
+    bottom:30%;
+    right:2.5%;
+}
+
+.form-title{
+    float: left;
+    width:10%;
+    font-family: 'Allerta';
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: uppercase;
+    padding-top: 1%;
+    padding-bottom:1%;
+    letter-spacing: 2px;
+}
+
+input[type=text]{
+    padding: 16px 15px;
+    width: 100%;
+    margin: 10px 0;
+    display: inline-block;
+    /* border: px solid whites; */
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  input[type=submit] {
+    background-color: #212121;
+    width: 100%;
+    color: white;
+    padding: 17px 22px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #212429;
+  }
+  .imageCaption{
+      width:auto;
+      padding-left:47%;
+      margin-top: 4.5%;
+  }
+  .imageCaption-second{
+    width:auto;
+    padding-left:42%;
+    margin-top: 4.5%;
+}
+.imageCaption-writing{
+    width:auto;
+    padding-left:45%;
+    margin-top: 4.5%;
+}
+
+
+  .image-caption{
+      color: #c4c4c6;
+      font-family: 'Allerta';
+      font-size: 16px;
+      text-transform: uppercase;
+      
+  }
+ 
+  .title-content{
+      text-transform: uppercase;
+      font-family: 'Allerta';
+      margin-top: 2% ;
+      padding-left:23%;
+      letter-spacing: 3px;
+      font-weight: 800;
+
+
+  }
+  .title-content-second{
+    text-transform: uppercase;
+    font-family: 'Allerta';
+    margin-top: 2% ;
+    padding-left:24%;
+    letter-spacing: 3px;
+    font-weight: 800;
+
+
+}
+.title-content-video{
+    text-transform: uppercase;
+    font-family: 'Allerta';
+    margin-top: 2% ;
+    padding-left:20%;
+    padding-right:20%;
+
+    
+    font-weight: 800;
+    text-align: center;
+
+}
+.title-content-writing{
+    text-transform: uppercase;
+    font-family: 'Allerta';
+    margin-top: 2% ;
+    padding-left:22%;
+    padding-right:20%;
+
+    
+    font-weight: 800;
+    text-align: center;
+}
+  .sub-title {
+      text-transform: uppercase;
+  }
+ .icon-one{
+     width:20px;
+     height: 20px;
+     background-image: url(../images/font-a-1.png);
+     background-repeat: no-repeat;
+    float: left;
+  }
+  .icon-two{
+    width:18px;
+    height: 17px;
+    background-image: url(../images/font-a-2.png);
+    background-repeat: no-repeat;
+    float: left;
+    margin-left: 20px;
+  }
+  .sub-text{
+      float: left;
+  }
+  .sub-text1{
+      float: left;
+      margin-right: 20px;
+  }
+  .content-paragrapah{
+      clear: both;
+      margin-top: 5%;
+    font-size: 14px;
+    color: #c4c4c6;
+    text-align: justify;
+    padding-left: 5%;
+    padding-right: 5%;
+
+    
+  }
+  .read-more-div{
+    border: 1px solid #d7d7d7;
+    border-top: 0;
+    border-bottom: 0 ;
+    height: 30px;
+    align-content: center;
+    width: 100px;
+  }
+  .read-more-text{
+      padding-left: 16px;
+      padding-right: 8px;
+
+      padding-top: 20px;
+      font-size: 14px;
+      color: #c4c4c6;
+      font-family: 'Allerta';
+
+  }
+  .seperator{
+      height: 1px;
+      width: 90%;
+    background:  #d7d7d7;
+    margin-top: 4%;
+    margin-left: 5%;
+    }
+
+    .content-footer-left span {
+        
+        font-family: 'Allerta';
+        font-size: 12px;
+        color: #c4c4c6;
+        margin-left: 5px;
+        margin-right: 5px;
+        text-transform: uppercase;
+
+     
+    }
+    .content-footer-left{
+        padding-left: 5%;
+        padding-top: 1.5%;
+    }
+    .lower-content-wrapper{
+        background: white;
+    }
+    .lower-content-wrapper-first{
+        background: #f9f9fb;
+    }
