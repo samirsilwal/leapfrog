@@ -15,12 +15,6 @@
 }
 
 
-/* .left-menu-icon {
-    width: 4.2483%;
-    float: left;
-    border: 1px solid #30333a;
-    background: chartreuse;
-} */
 
 .settings-icon{
     float: left;
@@ -243,6 +237,11 @@ aside {
 .content-footer-right li{
     display: inline;
     padding: 12px;
+    color: black;
+
+}
+.content-footer-right li a i{
+   
     color: black;
 
 }
