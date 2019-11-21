@@ -1,3 +1,126 @@
+/* media queries */
+@media only screen and (max-width:780px){
+    .right-social-links{
+        display: none;
+    }
+    .logo-ipad{
+        display: block;
+    }
+   .header-img{
+       height: 300px;
+   }
+   .below-footer-wrapper{
+       width: 93.406%;
+       padding-left: 10%;
+   }
+   aside{
+       display: none;
+   }
+   .body-left-container{
+       width: 100%;
+   }
+   .body-container{
+       height: 4680px;
+   }
+   .overlay-right-text{
+   display: none;
+    }
+   
+
+}
+
+@media only screen and (max-width:420px){
+   .big-title{
+       display: none;
+   }
+   .small-title{
+       display: none;
+   }
+   .header-img{
+       height: 170px;
+   }
+   .image-overlap-text-right-boxes{
+       display: none;
+   }
+   .form-title{
+       display: none;
+   }
+   .input-form-name{
+       float: none;
+       width: 100%;
+   }
+   .input-form-email{
+       float:none;
+       width: 100%;
+   }
+   .form-input-boxes{
+       margin-left: 0 ;
+   }
+   .form-title-ip{
+       display: block;
+   }   
+   .submit-button{
+       width: 100%;
+   }
+ 
+   .sub-text1{
+    padding-left: 15%;
+   }
+   .content-footer-right{
+    float: left;
+    padding-left: 25%;
+    padding-top: 3%;
+   }
+   .footer-container{
+       display: none;
+   }
+   .body-container{
+    height: 5000px;
+}
+.below-footer{
+    height: 70px;
+}
+.below-footer-wrapper{
+    font-size: 12px;
+}
+
+.menu-list{
+    float: none;
+    width:100%;
+}
+
+.copyright{
+    width: 100%;
+}
+.nav-bar-wrapper li{
+    display: inline-block;
+}
+}
+@media only screen and (max-width:380px){
+    .nav-bar-wrapper{
+        top:-300px;
+    }
+    .header-img{
+        padding-top: 85%;
+    
+    }
+   
+    .nav-bar-wrapper li{
+        width:300px;
+        padding-bottom: 0.5%;
+        text-align: center;
+        display: block;
+        background: #212429;
+        /* background: red; */
+    }
+    .below-footer{
+        height: 120px;
+    }
+    .body-container{
+        height: 5100px;
+    }
+}
+
 .image-overlap-text-left{
     position: absolute;
     bottom: 35%;
@@ -29,7 +152,7 @@
     text-transform: uppercase;
     font-size: 41px;
     font-weight: bold;
-    letter-spacing: 1.28px;
+    letter-spacing: 1.26px;
     text-align:justify;
 }
 .image-overlap-text-right-boxes{
@@ -53,7 +176,7 @@
 }
 .overlay-upper-arrow{
     position: absolute;
-    bottom:60%;
+    bottom:63%;
     right:2.5%;
 }
 .overlay-down-arrow{
@@ -93,7 +216,7 @@ input[type=text]{
     background-color: #212121;
     width: 100%;
     color: white;
-    padding: 17px 22px;
+    padding: 17px 18px;
     margin: 8px 0;
     border: none;
     border-radius: 4px;
@@ -199,7 +322,7 @@ input[type=text]{
   .content-paragrapah{
       clear: both;
       margin-top: 5%;
-    font-size: 14px;
+    font-size: 18px;
     color: #c4c4c6;
     text-align: justify;
     padding-left: 5%;
@@ -254,3 +377,143 @@ input[type=text]{
     .lower-content-wrapper-first{
         background: #f9f9fb;
     }
+    /* aside content styles */
+    .search-form-aside{
+       padding-top: 12%;
+       padding-bottom: 12% ;
+       margin-bottom: 5%;
+    }
+    .search-form-aside input[type=text]{
+        width: 100%;
+    }
+    .search-input{
+        float: left;
+        width: 80%;
+    }
+
+    .search-form-icon{
+        margin-top: 3%;
+        float: right;
+        width: 20%;
+        height: 55px;
+        background-image: url(../images/search-iamge.png);
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+.magazine-image{
+    clear: both;
+    padding-top:12%;
+    
+}
+.aside-catergories{
+    margin-top: 11%;
+    font-family: 'Allerta';
+    font-size: 16px;
+    text-transform: uppercase;
+    color:#252525;
+}
+.heading{
+    color: #1f1f1f;
+    text-transform: uppercase;
+    text-align: center;
+    font-family:'Allerta' ;
+    font-size: 19px;
+    margin-bottom: 10%;
+}
+.aside-catergories li{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top: 1px solid #f6f6f6;
+    border-bottom: 0.5px solid #f6f6f6 ;
+}
+.cat-right-count{
+    float: right;
+}
+
+/* list of post design */
+
+
+.list-image-holder{
+    height: 60px;
+    width: 30%;
+    background: #3a3c49;
+    float: left;
+}
+.list-text-holder{
+    float: right;
+    width: 65%;
+    padding-left: 5%;
+}
+.upper-text{
+    /* background: rosybrown; */
+    font-family: 'Allerta';
+    font-size: 16px;
+    text-transform: uppercase;
+}
+.lower-text{
+ /* background: sandybrown; */
+ font-family: 'Allerta';
+ font-size: 12px;
+ text-transform: uppercase;
+ padding-top: 2%;
+}
+.counts{
+    margin-left: 10%;
+}
+
+/* social media links */
+.social-media-links {
+    margin-top: 10%;
+    padding-top: 10%;
+}
+.social-media-links li {
+    display: inline;
+    padding-left: 2px ;
+    padding-right: 13.4%;
+}
+.social-media-links li a i{
+    color:black;
+}
+
+.left-slider{
+    background-image: url(../images/slsider-left.png);
+    background-repeat: no-repeat;
+    width:50px;
+    height: 50px;
+    position: absolute;
+    bottom: 40%;
+    left: 0;
+}
+.right-slider{
+    background-image: url(../images/sslider-right.png);
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left:87%;
+    bottom: 40%;
+}
+.facebook-plugin{
+    padding-top: 10%;
+}
+
+.footer-title{
+    padding-top: 10%;
+    font-family: 'Allerta';
+    font-size: 16px;
+    color: #f9f9fb;
+    text-transform: uppercase;
+    padding-bottom: 8%;
+}
+.footer-blog-part p{
+    font-family: 'Allerta';
+    font-size: 14px;
+    color: #bfc0c3;
+}
+.blog-image{
+    padding-top: 3%;
+
+}
+.tweets{
+    padding-top: 5%;
+}
