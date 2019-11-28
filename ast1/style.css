@@ -10,7 +10,12 @@ h1 {
     text-shadow: 4px 4px 10px white;
 }
 .image-container {
-    overflow: hidden;   
+    margin: 0 auto;
+    height: 600px;
+    width: 1200px;
+    overflow: hidden;
+    margin-top: 50px;
+    font-size: 80px;
     font-weight: 600;
     box-shadow: 0 0 20px white;
     position: relative;
@@ -18,10 +23,10 @@ h1 {
 
 
 
-/* .image-container-wrapper {
+.image-container-wrapper {
     position: absolute;
     width: calc(1200px * 7);
-} */
+}
 
 img {
     float:left;
@@ -62,11 +67,11 @@ img {
     top: 250px;
 }
 
-/* .indicators-wrapper {
+.indicators-wrapper {
     position: absolute;
     top: 550px;
     left: calc(1200px - 600px - 20px*5);
-} */
+}
 
 .indicators {
     float: left;
@@ -79,9 +84,8 @@ img {
 }
 
 .indicators:hover {
-    height: 15px;
-    width: 15px;
+    height: 10px;
+    width: 13px;
     box-shadow: 0 0 10px white;
-    cursor: pointer;
 
 }
