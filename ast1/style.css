@@ -10,30 +10,22 @@ h1 {
     text-shadow: 4px 4px 10px white;
 }
 .image-container {
-    margin: 0 auto;
-    height: 600px;
-    width: 1200px;
-    overflow: hidden;
-    margin-top: 50px;
-    position: relative;
-    font-size: 80px;
+    overflow: hidden;   
     font-weight: 600;
     box-shadow: 0 0 20px white;
+    position: relative;
 }
 
-.image-container-wrapper {
+
+
+/* .image-container-wrapper {
     position: absolute;
-}
+    width: calc(1200px * 7);
+} */
 
 img {
-    position: absolute;
-    opacity: 1;
-    transition: opacity 0.5s ease-out;
+    float:left;
 
-}
-
-img.out {
-    opacity: 0.4;
 }
 
 .left-click {
@@ -56,7 +48,7 @@ img.out {
 .right-click {
     position: absolute;
     top: 260px;
-    right: 5px;
+    left: 1150px;
 }
 
 .right-click a {
@@ -70,11 +62,11 @@ img.out {
     top: 250px;
 }
 
-.indicators-wrapper {
+/* .indicators-wrapper {
     position: absolute;
     top: 550px;
     left: calc(1200px - 600px - 20px*5);
-}
+} */
 
 .indicators {
     float: left;
@@ -87,8 +79,9 @@ img.out {
 }
 
 .indicators:hover {
-    height: 10px;
-    width: 13px;
+    height: 15px;
+    width: 15px;
     box-shadow: 0 0 10px white;
+    cursor: pointer;
 
 }
