@@ -197,10 +197,10 @@ var first = new ImageCarousel(images, 1200, 600, 'image-container-wrapper', 'ind
 first.init();
 
 var second = new ImageCarousel(images, 1200, 600, 'image-container-wrapper-1', 'indicators-wrapper-1');
+second.setStepOfTransition(2);
 
 second.init();
 
-second.setStepOfTransition(2);
 
 var third = new ImageCarousel(images, 1200, 600, 'image-container-wrapper-2', 'indicators-wrapper-2');
 
