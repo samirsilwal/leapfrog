@@ -194,13 +194,13 @@ var images = document.getElementsByClassName('image-container-wrapper')[0].child
 
 //!instance creation
 var first = new ImageCarousel(images, 1200, 600, 'image-container-wrapper', 'indicators-wrapper');
-first.setStepOfTransition(2);
 first.init();
 
 var second = new ImageCarousel(images, 1200, 600, 'image-container-wrapper-1', 'indicators-wrapper-1');
 
 second.init();
 
+second.setStepOfTransition(2);
 
 var third = new ImageCarousel(images, 1200, 600, 'image-container-wrapper-2', 'indicators-wrapper-2');
 
