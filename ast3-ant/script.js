@@ -244,6 +244,6 @@ function StartGame(parentElement, boxCount) {
 
 var parentElement = document.getElementById('app');
 
-var a = new StartGame(parentElement, 5);
+var a = new StartGame(parentElement, 7);
 a.createRandomants(x = 0, y = 0, speed = 1, width = 30, height = 40);
 a.start();
