@@ -46,7 +46,7 @@ window.addEventListener("load", function () {
   }
 });
 
-function Ant(x, y, speed, width, height, parentElement) {
+function Ant(x, y, speed, width, height, parentElement,index) {
     this.x = x;
     this.y = y;
     this.dx = 0.5*speed;
@@ -55,6 +55,7 @@ function Ant(x, y, speed, width, height, parentElement) {
     this.height = height;
     this.element = null;
     this.parentElement = parentElement;
+    this.index = index;
     var that = this;
 
     this.setPostion = function (x, y) {
@@ -63,14 +64,11 @@ function Ant(x, y, speed, width, height, parentElement) {
     }
 
     this.boxClicked = function () {
-        console.log('boxClicked', this.width);
-        this.element.addEventListener('click', function(event){
-            
-            var x = event.x;
-            var y = event.y;
-            
+        console.log('boxClicked', this.index , ants);
+        
+
             for (let i = 0; i < ants.length; i++) {
-                if (distance(x, y, ants[i].x, ants[i].y) <= ants[i].width) {
+                if (ants[i].index === this.index) {
                    var updated = ants.filter(function(val, index){
                         ants[i].element.children[0].src = './images/Red-Cross-Transparent-PNG.png';
 
@@ -80,8 +78,9 @@ function Ant(x, y, speed, width, height, parentElement) {
                    ants = updated;
                 }
             }
-        });
 
+        
+        
     }
 
     this.draw = function () {
@@ -153,7 +152,8 @@ function StartGame(parentElement, boxCount) {
         totalAnts = length;
         while (length !== 0) {
             var flag = 0;
-            var ant = new Ant(x, y, speed, width, height, parentElement);
+
+            var ant = new Ant(x, y, speed, width, height, parentElement, length);
             
 
             var xPosition = getRandomPosition(0, this.MAX_WIDTH - ant.width);
