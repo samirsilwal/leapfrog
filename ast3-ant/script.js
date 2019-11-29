@@ -70,11 +70,11 @@ function Ant(x, y, speed, width, height, parentElement,index) {
             for (let i = 0; i < ants.length; i++) {
                 if (ants[i].index === this.index) {
                    var updated = ants.filter(function(val, index){
-                        ants[i].element.children[0].src = './images/Red-Cross-Transparent-PNG.png';
+                        ants[i].element.children[0].src = './images/blood.png';
 
                        return i !== index; 
                    });
-                   
+                    
                    ants = updated;
                 }
             }
