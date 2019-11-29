@@ -64,22 +64,15 @@ function Ant(x, y, speed, width, height, parentElement) {
 
     this.boxClicked = function () {
         console.log('boxClicked', this.width);
-        this.element.addEventListener('mousedown', function(event){
-            console.log(event);
+        this.element.addEventListener('click', function(event){
             
             var x = event.x;
             var y = event.y;
             
             for (let i = 0; i < ants.length; i++) {
                 if (distance(x, y, ants[i].x, ants[i].y) <= ants[i].width) {
-                   console.log('hello');
                    var updated = ants.filter(function(val, index){
                         ants[i].element.children[0].src = './images/Red-Cross-Transparent-PNG.png';
-                       
-                       // ants[i].element.style.display = 'none';
-
-                      
-                      
 
                        return i !== index; 
                    });
@@ -132,6 +125,7 @@ Ant.prototype.init = function () {
     antImg.src = 'https://www.animatedimages.org/data/media/183/animated-ant-image-0071.gif';
     antImg.classList.add('img');
     ant.appendChild(antImg);
+    ant.style.userSelect = 'none';
     this.parentElement.appendChild(ant);
 
     this.element = ant;
@@ -245,5 +239,5 @@ function StartGame(parentElement, boxCount) {
 var parentElement = document.getElementById('app');
 
 var a = new StartGame(parentElement, 7);
-a.createRandomants(x = 0, y = 0, speed = 1, width = 30, height = 40);
+a.createRandomants(x = 0, y = 0, speed = 1, width = 40, height = 50);
 a.start();
