@@ -9,7 +9,7 @@ var reference;
 var speedRoad = 30;
 var carSpeed = 20;
 
-var carsImages = ['green', 'blue', 'puruple', 'random', 'spotted', 'myCar'];
+var carsImages = ['green', 'blue', 'puruple','grey',  'spotted', 'myCar'];
 
 function start() {
 

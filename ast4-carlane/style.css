@@ -3,6 +3,9 @@ img {
     width: 100%;
     display: block;
 }
+body {
+    background-color: #7a7468;
+}
 
 .road-container {
     margin: 0 auto;
@@ -99,7 +102,8 @@ img {
     font-size: 80px;
     text-align: center;
     padding-left: 220px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    letter-spacing: 10px;
     text-transform: uppercase;
 }
 
@@ -119,9 +123,11 @@ img {
     cursor: pointer;
 }
 .title {
-    color: #98267a;
+    color: white;
     font-size: 45px;
     font-weight: 700;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+
     text-transform: uppercase;
     position: absolute;
     padding-left: 70px;
