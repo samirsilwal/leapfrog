@@ -6,7 +6,8 @@ element.style.bottom = 0;
 var roadId;
 var reference;
 
-//var speed = 20;
+var speedRoad = 30;
+var carSpeed = 20;
 
 var carsImages = ['green', 'blue', 'puruple', 'random', 'spotted', 'myCar'];
 
@@ -28,7 +29,7 @@ function start() {
             currentImagePosition = 0;
             start();
         }
-    }, 30);
+    }, speedRoad);
 
 
 
@@ -49,7 +50,7 @@ function Car(width, height, parentElement, currentLane, myCar, index) {
     this.x = 0;
     this.y = 0;
     this.dx = 76;
-    this.dy = 4;
+    this.dy = 5;
     this.myCar = myCar;
     this.index = index || -1;
     var that = this;
@@ -269,7 +270,7 @@ function StartGame() {
         }
     }
     this.start = function () {
-        movingCarsId = setInterval(this.movecars.bind(this), 20);
+        movingCarsId = setInterval(this.movecars.bind(this), carSpeed);
     }
     this.stop = function () {
         clearInterval(movingCarsId);
@@ -430,6 +431,10 @@ function timer() {
             var mins = Math.floor(secs / 60);
             secs -= mins * 60;
 
+            if(secs == 30) {
+                speedRoad -=10;
+                carSpeed -=10;
+            }
            
 
         }, 1000);
