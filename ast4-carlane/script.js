@@ -172,6 +172,7 @@ function Car(width, height, parentElement, currentLane, myCar, index) {
         if (this.myCar) {
             this.element.setAttribute('tabindex', '0');
             this.element.focus();
+            this.element.style.outline = 'none';
             this.move();
         }
 
