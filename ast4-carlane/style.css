@@ -1,0 +1,148 @@
+img {
+    height: auto;
+    width: 100%;
+    display: block;
+}
+
+.road-container {
+    margin: 0 auto;
+    height: 510px;
+    width: 510px;
+    overflow: hidden;
+    position: relative;
+    border: 5px solid black;
+}
+
+.image-container-wrapper {
+    height: calc(510px * 3);
+    width: 510px;
+    position: absolute;
+  
+
+}
+
+.mycar {
+    position: absolute;
+    /* background: blue; */
+}
+.score-display {
+    position: absolute;
+    width: 510px;
+    height: 300px;
+    left: 515px;
+    top: 130px;
+    display: none;
+    opacity: 80%;
+    background-color: #7a7468;
+
+
+}
+.score-display-current {
+    position: absolute;
+    width: 25%;
+    margin:  0 auto;
+    height: 20%;
+    display: none;
+
+    opacity: 80%;
+    background-color: #272d38;
+}
+
+.score-display-high {
+    position: absolute;
+    width: 25%;
+    height: 20%;
+    right: 0;
+    display: none;
+    opacity: 80%;
+    background-color: #272d38;
+}
+.score-display-current p{
+    color: red;
+    font-size: 16px;
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.score-display-current span{
+    color: red;
+    font-size: 25px;
+    text-align: center;
+    padding-left: 45px;
+
+    text-transform: uppercase;
+}
+.score-display-high span{
+    color: red;
+    font-size: 25px;
+    text-align: center;
+    padding-left: 45px;
+
+    text-transform: uppercase;
+}
+.score-display-high p{
+    color: red;
+    font-size: 16px;
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.score-display p{
+    color: red;
+    font-size: 40px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.score-display span{
+    color: black;
+    font-size: 80px;
+    text-align: center;
+    padding-left: 220px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-transform: uppercase;
+}
+
+.starticon{
+    position: absolute;
+    top: 40%;
+    left: 29%;
+    width: 200px;
+    height: 200px;
+    opacity: 80%;
+    cursor: pointer;
+}
+
+.starticon :hover{
+    width: 230px;
+    height: 210px;
+    cursor: pointer;
+}
+.title {
+    color: #98267a;
+    font-size: 45px;
+    font-weight: 700;
+    text-transform: uppercase;
+    position: absolute;
+    padding-left: 70px;
+    padding-top: 80px;
+}
+.replay {
+    color: #98267a;
+    font-size: 45px;
+    font-weight: 700;
+    text-transform: uppercase;
+    position: absolute;
+    padding-left: 510px;
+    height: 50px;
+    left: 220px;
+    top:450px;
+    width: 50px;
+    display: none;
+}
+.replay :hover{
+    height: 60px;
+    width: 60px;
+    cursor: pointer;
+
+}

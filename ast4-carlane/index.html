@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title> BoxCollision </title>
+</head>
+
+<body>
+    <style>
+
+    </style>
+
+    <div class='road-container' id='road-container'>
+        <div class='image-container-wrapper' id="image-wrapper">
+            <img id='image0' src="./images/back.png">
+            <img id='image1' src="./images/back3.png">
+            <img id='image0' src="./images/back.png">
+
+
+
+        </div>
+
+
+        <div class="score-display-current">
+            <p>YourScore :</p>
+            <span id="currentscore"></span>
+        </div>
+
+        <div class="score-display-high">
+            <p> HighScore :</p>
+            <span id="currentscorehigh"></span>
+        </div>
+
+
+        <div class='starticon' id="start-screen">
+            <img onclick="beginGame()" src="./images/start.png">
+        </div>
+
+        <div class="title">
+            click to play!!!
+        </div>
+
+
+
+    </div>
+    <div class="score-display">
+        <p>Final Score :</p>
+        <span id="score"></span>
+    </div>
+    <div class="replay">
+        <img onclick="replayGame()" src="./images/replay.png">
+    </div>
+
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
