@@ -172,7 +172,6 @@ function Car(width, height, parentElement, currentLane, myCar, index) {
         if (this.myCar) {
             this.element.setAttribute('tabindex', '0');
             this.element.focus();
-            this.element.style.outline = 'none';
             this.move();
         }
 
@@ -461,7 +460,7 @@ function Sound(src) {
 
 var audio = new Sound('./images/background.mp3');
 var crash = new Sound('./images/crash.wav');
-var change = new Sound('./images/change.mp3');
+var change = new Sound('./images/change-1.mp3');
 
 
 function beginGame() {
