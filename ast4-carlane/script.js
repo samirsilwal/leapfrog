@@ -5,40 +5,25 @@ element.style.bottom = 0;
 
 var roadId;
 var reference;
+var bulletCounter = 5;
 
-var speedRoad = 30;
+var speedRoad = 5;
 var carSpeed = 20;
 
-var carsImages = ['green', 'blue', 'puruple','grey',  'spotted', 'myCar'];
+var carsImages = ['green', 'blue', 'puruple', 'grey', 'spotted', 'myCar'];
 
-function start() {
+var cars = [];
+var bullets = [];
+var lanePositions = ['left', 'middle', 'right']
 
-    var nextImagePosition = (currentImagePosition + 1) % 3;
+var parentElement = document.getElementById('road-container');
+var a;
 
-    var current = currentImagePosition * 510;
-    var id = setInterval(function () {
-        roadId = id;
-        current += 10;
-
-
-        document.getElementById('image-wrapper').style.bottom = -current + 'px';
-
-        if (current == 1020) {
-            clearInterval(id);
-            document.getElementById('image-wrapper').style.bottom = 0 + 'px';
-            currentImagePosition = 0;
-            start();
-        }
-    }, speedRoad);
+var keySetOne = [65, 68];
+var keySetTwo = [74 , 76];
+var secsValue;
 
 
-
-
-    currentImagePosition = nextImagePosition;
-
-
-
-}
 //! for my car class
 
 function Car(width, height, parentElement, currentLane, myCar, index) {
@@ -53,6 +38,7 @@ function Car(width, height, parentElement, currentLane, myCar, index) {
     this.dy = 5;
     this.myCar = myCar;
     this.index = index || -1;
+    this.keySet = null;
     var that = this;
 
     this.change = function () {
@@ -118,33 +104,33 @@ function Car(width, height, parentElement, currentLane, myCar, index) {
     this.moveLeft = function () {
         changeLaneAnimation('left');
 
-        if (a.currentLane === 'right') {
-            a.currentLane = "middle";
+        if (this.currentLane === 'right') {
+            this.currentLane = "middle";
         } else {
-            a.currentLane = 'left';
+            this.currentLane = 'left';
 
         }
 
-        a.element.style.left = a.x - a.dx + 'px';
-        a.element.style.bottom = a.y + 'px';
-        a.x -= a.dx;
+        this.element.style.left = this.x - this.dx + 'px';
+        this.element.style.bottom = this.y + 'px';
+        this.x -= this.dx;
     }
 
     this.moveRight = function () {
         changeLaneAnimation('right');
 
-        if (a.currentLane === 'left') {
-            a.currentLane = 'middle';
+        if (this.currentLane === 'left') {
+            this.currentLane = 'middle';
         } else {
-            a.currentLane = "right";
+            this.currentLane = "right";
 
         }
 
 
-        a.element.style.left = a.x + a.dx + 'px';
-        a.element.style.bottom = a.y + 'px';
+        this.element.style.left = this.x + this.dx + 'px';
+        this.element.style.bottom = this.y + 'px';
 
-        a.x += a.dx;
+        this.x += this.dx;
         // this.y = this.dy;
     }
 
@@ -179,6 +165,27 @@ function Car(width, height, parentElement, currentLane, myCar, index) {
         return this;
     }
 
+    this.bulletShot = function (bullet) {
+
+        //clearInterval(bulletId);
+    
+
+        this.parentElement.removeChild(that.element);
+        bullet.parentElement.removeChild(bullet.element);
+
+        var i = this.index;
+        var updated = cars.filter(function (val) {
+            return val.index !== i;
+        });
+        cars = updated;
+
+        bullets = [];   
+      //  console.log(bulletCounter);
+
+
+
+    }
+
     this.remove = function () {
         destroyedCarCounter++;
 
@@ -193,24 +200,44 @@ function Car(width, height, parentElement, currentLane, myCar, index) {
         // console.log('final parent element', this.parentElement);
     }
 
+    this.throwBullets = function () {
+       // bullets = [];
+        var bullet = new Bullet(a.x, a.y, parentElement, a.currentLane).init();
+        bullets.push(bullet);
+        bulletCounter--;
+
+        document.getElementById('bullet-count').innerHTML = bulletCounter;
+
+        bullet.movePosition();
+        bullet.move();
+
+    }
+
     this.move = function () {
 
         this.element.addEventListener('keydown', reference = function (event) {
 
             if ((that.x + that.dx) < 350) {
-                if (event.keyCode === 68) {
+                if (event.keyCode === that.keySet[1]) {
                     change.play();
 
                     that.moveRight();
                 }
             }
+
             if ((that.x - that.dx) > 140) {
-                if (event.keyCode === 65) {
+                if (event.keyCode === that.keySet[0]) {
                     change.play();
 
                     that.moveLeft();
                 }
             }
+
+           if(bulletCounter > 0) {
+            if (event.keyCode == 32) {
+                that.throwBullets();
+            }
+           }
         }, true);
 
     }
@@ -220,13 +247,11 @@ function Car(width, height, parentElement, currentLane, myCar, index) {
 
 
 //! class for falling vehicles 
-var lanePositions = ['left', 'middle', 'right']
 
 function getRandomPosition(min, max) {
     return Math.random() * (max - min) + min;
 }
 
-var cars = [];
 
 function StartGame() {
     var y;
@@ -240,11 +265,16 @@ function StartGame() {
         cs.innerHTML = this.getCookie('highScore');
 
     }
+
+
     this.movecars = function () {
-        // console.log(parentElement);
+        
+
         this.displayCurrentScore();
 
         for (var i = 0; i < cars.length; i++) {
+
+
 
             if (cars[i].currentLane === a.currentLane) {
                 if (cars[i].y >= (510 - a.y - 140)) {
@@ -258,6 +288,8 @@ function StartGame() {
             }
             cars[i].change();
 
+
+
             if (cars[i].y > 510) {
 
                 cars[i].remove();
@@ -267,10 +299,36 @@ function StartGame() {
 
                 }
             }
+
+
+           if (bullets.length !== 0) {
+
+                for (var j = 0; j < bullets.length; j++) {
+
+                    // bullets[i].move();
+                    if (cars[i].currentLane === bullets[j].currentLane) {
+                        if (cars[i].y >= (510 - bullets[j].y - 140)) {
+
+                            var tempBullet = bullets[0];
+                        
+                            cars[i].bulletShot(tempBullet);
+      
+                        }
+
+                    }
+                    if (cars.length === 0) {
+                        this.createRandomCars();
+
+                    }
+                }
+
+            }
+
+
         }
     }
     this.start = function () {
-        movingCarsId = setInterval(this.movecars.bind(this), carSpeed);
+        movingCarsId = setInterval(this.movecars.bind(this), 30);
     }
     this.stop = function () {
         clearInterval(movingCarsId);
@@ -287,7 +345,7 @@ function StartGame() {
         a.element.style.transform = 'rotate(' + (-1) ** sign * 15 + 'deg)';
         var el = document.getElementById('score');
         document.getElementsByClassName('score-display')[0].style.display = 'block';
-        document.getElementsByClassName('replay')[0].style.display = 'block';
+     //   document.getElementsByClassName('replay')[0].style.display = 'block';
         el.innerHTML = destroyedCarCounter;
         this.storeScore(destroyedCarCounter);
 
@@ -381,7 +439,7 @@ function changeLaneAnimation(direction) {
                 a.element.style.transform = 'rotate(' + -1 + 'deg)';
 
             }
-        }, 30);
+        }, 20);
     } else {
         var hello = setInterval(function () {
 
@@ -394,19 +452,16 @@ function changeLaneAnimation(direction) {
                 a.element.style.transform = 'rotate(' + 1 + 'deg)';
 
             }
-        }, 30);
+        }, 20);
     }
 
 }
 
 
 
-var parentElement = document.getElementById('road-container');
-var a;
 
-function replayGame() {
-    location.reload();
-}
+
+
 
 
 //!section for timing control
@@ -414,7 +469,7 @@ var counter = {};
 
 function timer() {
 
-    counter.end = 60;
+    counter.end = 120;
 
     // counter.sec = document.getElementById("timer");
 
@@ -430,12 +485,14 @@ function timer() {
             secs = counter.end;
             var mins = Math.floor(secs / 60);
             secs -= mins * 60;
+            secsValue = secs;
+            if (secs % 30 == 0) {
+        
+                bulletCounter = 5;
+                document.getElementById('bullet-count').innerHTML = bulletCounter;
 
-            if(secs == 30) {
-                speedRoad -=10;
-                carSpeed -=10;
             }
-           
+
 
         }, 1000);
     }
@@ -462,13 +519,45 @@ var audio = new Sound('./images/background.mp3');
 var crash = new Sound('./images/crash.wav');
 var change = new Sound('./images/change-1.mp3');
 
+function start() {
+
+    var nextImagePosition = (currentImagePosition + 1) % 3;
+
+    var current = currentImagePosition * 510;
+    var id = setInterval(function () {
+        roadId = id;
+        current += 15 ;
+
+
+        document.getElementById('image-wrapper').style.bottom = -current + 'px';
+
+        if (current == 1020) {
+            clearInterval(id);
+            document.getElementById('image-wrapper').style.bottom = 0 + 'px';
+            currentImagePosition = 0;
+            start();
+        }
+    }, 30);
+
+
+
+
+    currentImagePosition = nextImagePosition;
+
+
+
+}
+
 
 function beginGame() {
 
     audio.play();
 
-
     timer();
+    document.getElementsByClassName('bullets-display')[0].style.display = 'block';
+
+    document.getElementById('bullet-count').innerHTML = bulletCounter;
+
     document.getElementsByClassName('title')[0].style.display = 'none';
 
     document.getElementsByClassName('score-display-current')[0].style.display = 'block';
@@ -477,6 +566,96 @@ function beginGame() {
     var icon = document.getElementById('start-screen');
     icon.style.display = 'none';
     a = new Car(50, 50, parentElement, 'left', true).init();
+    a.keySet = keySetOne;
+ 
+    var game = new StartGame();
+    game.createRandomCars();
+    start();
+
+    game.start();
+
+}
+
+
+//! bullet implementation
+
+
+function Bullet(x, y, parentElement, currentLane) {
+    this.x = x;
+    this.y = y;
+    this.width = 50;
+    this.height = 50;
+    this.element = null;
+    this.parentElement = parentElement;
+    this.dy = 20;
+    var that = this;
+    this.currentLane = currentLane;
+    this.index = null;
+
+
+
+    this.change = function () {
+        this.y += this.dy;
+        this.movePosition();
+    }
+
+    this.setPosition = function (y) {
+        this.y = y;
+    }
+    this.movePosition = function () {
+        this.element.style.bottom = this.y + 45 + 'px';
+        this.element.style.left = this.x  + 'px';
+    }
+    this.move = function () {
+        bulletId = setInterval(function () {
+            that.change();
+        }, 20);
+
+    }
+
+    this.init = function () {
+        var bullet = document.createElement('div');
+        var bulletImage = document.createElement('img');
+        bullet.setAttribute('id', 'bullet' + this.index);
+        bullet.style.height = this.height + 'px';
+        bullet.style.width = this.width + 'px';
+        bullet.classList.add('bullet');
+    
+        bulletImage.src = './images/bullet.png';
+
+       
+        bulletImage.classList.add('img');
+        bullet.appendChild(bulletImage);
+        bullet.style.userSelect = 'none';
+        this.parentElement.appendChild(bullet);
+
+        this.element = bullet;
+      
+        return this;
+    }
+}
+
+
+
+function beginGame() {
+
+    audio.play();
+
+    timer();
+    document.getElementsByClassName('bullets-display')[0].style.display = 'block';
+
+    document.getElementById('bullet-count').innerHTML = bulletCounter;
+
+    document.getElementsByClassName('title')[0].style.display = 'none';
+
+    document.getElementsByClassName('score-display-current')[0].style.display = 'block';
+    document.getElementsByClassName('score-display-high')[0].style.display = 'block';
+
+    var icon = document.getElementById('start-screen');
+    icon.style.display = 'none';
+    a = new Car(50, 50, parentElement, 'left', true).init();
+    a.keySet = keySetOne;
+ 
     var game = new StartGame();
     game.createRandomCars();
     start();
