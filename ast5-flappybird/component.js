@@ -25,7 +25,7 @@ function Component(width, height, color, x, y, type, myGameArea) {
         var footer = document.getElementById(this.myGameArea.footer);
 
         
-            current += 2;
+            current += 5;
 
             footer.style.left = -current + 'px';
 
@@ -45,7 +45,7 @@ function Component(width, height, color, x, y, type, myGameArea) {
 
         for (var i = 0; i < obstacles.length; i++) {
             if (that.crash(obstacles[i])) {
-                localStorage.setItem('score', ''+Math.floor(myGameArea.frame / 200));
+                localStorage.setItem('score', ''+ Math.floor(myGameArea.frame / 80));
                 myGameArea.stop();
                 return;
             }
@@ -53,13 +53,13 @@ function Component(width, height, color, x, y, type, myGameArea) {
         myGameArea.clear();
         myGameArea.frame += 1;
 
-        if (myGameArea.frame == 1 || myGameArea.everyInterval(160)) {
+        if (myGameArea.frame == 1 || myGameArea.everyInterval(80)) {
             x = myGameArea.canvas.height;
             y = myGameArea.canvas.width;
-            minHeight = 100;
+            minHeight = 90;
             maxHeight = 400;
             height = Math.floor(Math.random() * (maxHeight - minHeight + 1) + minHeight);
-            minGap = 90;
+            minGap = 120;
             maxGap = 150;
             gap = Math.floor(Math.random() * (maxGap - minGap + 1) + minGap);
 
@@ -70,11 +70,11 @@ function Component(width, height, color, x, y, type, myGameArea) {
        }
 
         for (var i = 0; i < obstacles.length; i++) {
-            obstacles[i].x += -2;
+            obstacles[i].x += -5;
             obstacles[i].update();
         }
 
-        score.text = "SCORE: " + Math.floor(myGameArea.frame / 200);
+        score.text = "SCORE: " + Math.floor(myGameArea.frame / 80);
         score.update();
 
 
@@ -182,7 +182,7 @@ function Component(width, height, color, x, y, type, myGameArea) {
     }
 
     this.jumpUp = function() {
-       this.y -= 25 + this.gravityEffect;
+       this.y -= 30 + this.gravityEffect;
       
       this.gravityEffect = 0;
 
