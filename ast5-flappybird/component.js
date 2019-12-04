@@ -101,6 +101,7 @@ function Component(width, height, color, x, y, type, myGameArea) {
         if (this.y > bottom) {
             this.y = bottom;
             this.gravityEffect= 0;
+            this.myGameArea.stop();
         }
     }
 
