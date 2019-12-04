@@ -7,6 +7,9 @@ img {
 body {
     background: black;
 }
+.note {
+    color: white;
+}
 .canvas-holder {
     margin-left: 30%;
     position: relative;
