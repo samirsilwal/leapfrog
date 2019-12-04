@@ -1,0 +1,73 @@
+img {
+    height: auto;
+    width: 100%;
+    display: block;
+}
+
+body {
+    background: black;
+}
+.canvas-holder {
+    margin-left: 30%;
+    position: relative;
+
+}
+.gap{
+    height: 100px;
+    width: 100%;
+}
+
+.canvas-holder1 {
+    margin-left: 30%;
+    position: relative;
+    margin-top: 700px
+   
+
+}
+
+.canvas {
+ 
+    position: absolute;
+    top:0;
+    left: 0;;
+}
+
+.canvas1 {
+ 
+    position: absolute;
+    top:0;
+    left: 0;;
+}
+
+
+
+#background{
+    z-index: 1;
+}
+
+#game {
+  z-index: 2;
+}
+#ui {
+    z-index: 3;
+}
+#score {
+    z-index: 4;
+}
+
+
+
+#background1{
+    z-index: 1;
+}
+
+#game1{
+  z-index: 2;
+}
+
+#ui1 {
+    z-index: 3;
+}
+#score1 {
+    z-index: 4;
+}
