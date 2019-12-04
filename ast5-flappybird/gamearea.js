@@ -2,7 +2,7 @@
 
 
 
-function MyGameArea(gameCanvas, backCanvas, uiCanvas, scoreCanvas, updateGameArea, parent, keyCode, resetFunction, scoreLocation) {
+function MyGameArea(gameCanvas, backCanvas, uiCanvas, scoreCanvas, footer,updateGameArea, parent, keyCode, resetFunction, scoreLocation) {
     this.canvas = document.getElementById(gameCanvas);
     this.backCanvas = document.getElementById(backCanvas);
     this.uiCanvas = document.getElementById(uiCanvas);
@@ -10,6 +10,7 @@ function MyGameArea(gameCanvas, backCanvas, uiCanvas, scoreCanvas, updateGameAre
     this.keyCode = keyCode;
     this.resetFunction = resetFunction;
     this.scoreLocation = scoreLocation;
+    this.footer = footer;
     var that = this;
 
     this.listen = function (bird) {

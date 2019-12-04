@@ -18,9 +18,29 @@ function Component(width, height, color, x, y, type, myGameArea) {
     this.gravityEffect = 4;
     var that = this;
     this.myGameArea = myGameArea;
+    var current  = 0;
+    
+
+    this.moveFooter = function() {
+        var footer = document.getElementById(this.myGameArea.footer);
+
+        
+            current += 2;
+
+            footer.style.left = -current + 'px';
+
+            if(current >= 480) {
+                footer.style.left = 0 + 'px';
+                current = 0;
+            }
+
+       
+    }
 
 
     this.updateGameArea = function (score) {
+        this.moveFooter();
+
         var x, height, gap, minHeight, maxHeight, minGap, maxGap;
 
         for (var i = 0; i < obstacles.length; i++) {
@@ -128,7 +148,6 @@ function Component(width, height, color, x, y, type, myGameArea) {
          
 
             var nextImage = (currentImage + 1) % 3;
-            console.log(nextImage);
             this.image.src = './images/' + nextImage + '.png';
             ctx.drawImage(this.image, 
                 this.x, 

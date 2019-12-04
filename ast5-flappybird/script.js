@@ -6,7 +6,7 @@ var score;
 
 function start() {
 
- myGameArea = new MyGameArea('game', 'background', 'ui','score',updateGameArea, 'canvas-holder', 87, start, 'best');
+ myGameArea = new MyGameArea('game', 'background', 'ui','score','footer',updateGameArea, 'canvas-holder', 87, start, 'best');
 
  flappyBird = new Component(50, 50, './images/0.png', 100, 120, 'imagebird', myGameArea);
  score = new Component("30px", "Consolas", "black", 300, 50, 'text', myGameArea);
@@ -34,7 +34,7 @@ var score1;
 
 function start1() {
 
-    myGameArea1 = new MyGameArea('game1', 'background1', 'ui1','score1',updateGameArea1, 'canvas-holder1', 96, start1, 'best1');
+    myGameArea1 = new MyGameArea('game1', 'background1', 'ui1','score1','footer1',updateGameArea1, 'canvas-holder1', 96, start1, 'best1');
    
     flappyBird1 = new Component(50, 50, './images/bird.gif', 100, 120, 'imagebird', myGameArea1);
     score1 = new Component("30px", "Consolas", "black", 300, 50, 'text', myGameArea1);
