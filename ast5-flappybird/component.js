@@ -14,8 +14,8 @@ function Component(width, height, color, x, y, type, myGameArea) {
         this.image = new Image();
         this.image.src = color;
     }
-    this.gravity = 0.05;
-    this.gravityEffect = 4;
+    this.gravity = 0.5;
+    this.gravityEffect = 0;
     var that = this;
     this.myGameArea = myGameArea;
     var current  = 0;
@@ -91,7 +91,7 @@ function Component(width, height, color, x, y, type, myGameArea) {
          //   this.fallUpdate(180);
         
         this.gravityEffect += this.gravity;
-      //  this.x += this.dx;
+     
         this.y += this.dy + this.gravityEffect;
         this.hitBottom();
     }
@@ -182,17 +182,16 @@ function Component(width, height, color, x, y, type, myGameArea) {
     }
 
     this.jumpUp = function() {
-        this.gravity = -0.2;
-        this.y -= 25 + this.gravityEffect;
-        this.x += this.dx;
-
+       this.y -= 25 + this.gravityEffect;
+      
+      this.gravityEffect = 0;
 
 
     }
 
-    this.jumpDown = function() {
-        this.gravity = 0.05 ;
-    }
+    // this.jumpDown = function() {
+    //     this.gravity = 0.05 ;
+    // }
 
 
 }

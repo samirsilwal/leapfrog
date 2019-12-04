@@ -21,11 +21,11 @@ function MyGameArea(gameCanvas, backCanvas, uiCanvas, scoreCanvas, footer,update
 
         });
 
-        window.addEventListener('keyup', (event) => {
-            if (event.keyCode === that.keyCode) {
-                bird.jumpDown();
-            }
-        })
+        // window.addEventListener('keyup', (event) => {
+        //     if (event.keyCode === that.keyCode) {
+        //         bird.jumpDown();
+        //     }
+        // })
     }
     this.start = function () {
         that.canvas.width = 480;
