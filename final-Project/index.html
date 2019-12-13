@@ -9,14 +9,21 @@
 <body>
     
 
-    <p>select Outer Image(PNG format):</p>
+    <p>select Cover Image(PNG format):</p>
     <p><input type="file" id="img" accept="image/*"></p>
-    <p>select innerFile:</p>
-    <p><input type="file" id="file"></p>
-    <button onclick="readCoverImage()">Do it!</button>
 
-    <script src="./src/script.js"></script>
-    <script src="./src/parser.js"></script>
+    <p>select File to hide:</p>
+    <p><input type="file" id="file"></p>
+
+
+    <button onclick="readCoverImage()">Encode!!!</button>
+
+
+    <script src="./js/encoder.js"></script>
+
+    <script src="./js/file-reader.js"></script>
+
+    <script src="./js/script.js"></script>
 
 
 </body>
