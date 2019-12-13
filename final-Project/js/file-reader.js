@@ -29,6 +29,28 @@ function getFileToHide(img) {
     reader.readAsBinaryString(innerFile);
     reader.onload = function (event) {
         console.log(event.target.result, img.src ,innerFile.name);
+     // testEncode(img, event.target.result, innerFile.name);
       encode(img, event.target.result, innerFile.name);
+
     }
 }
+
+
+function readEncodedImage() {
+    var outerImg = document.getElementById("img1");
+
+    if (!outerImg.files[0]) {
+      return;
+    }
+
+    var imgData = outerImg.files[0];
+    var reader = new FileReader();
+    reader.onload = function (event) {
+      var img = new Image;
+      img.onload = function () {
+        decode(this);
+      }
+      img.src = event.target.result;
+    }
+    reader.readAsDataURL(imgData);
+  }

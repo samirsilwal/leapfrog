@@ -165,3 +165,71 @@
   //   ctx.putImageData(image, 0, 0);
   //   canvas.style.display = "";
   // }
+
+
+
+  
+  // function doThings(img) {
+  //   var canvas = null,
+  //     ctx = null,
+  //     canvas = document.createElement("canvas");
+  //   // the canvas should not be visible
+  //   canvas.style.display = "none";
+  //   var b = document.getElementsByTagName("body")[0];
+  //   b.appendChild(canvas);
+  //   ctx = canvas.getContext("2d");
+  //   // apply the width and height to the canvas element
+  //   canvas.width = img.width;
+  //   canvas.height = img.height;
+  //   // draw the image into the canvas element
+  //   ctx.drawImage(img, 0, 0);
+  //   var image = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  //   var imageData = image.data;
+  //   var length = imageData.length;
+  //   var newData = new Array();
+  //   var width = canvas.width;
+  //   var pass = prompt("please enter a password");
+  //   var passhash = 0;
+  //   var rng = new Alea(pass);
+  //   for (var i = 0; i < length; i++) {
+  //     newData[i] = i;
+  //   }
+  //   var bytes = Array();
+  //   var deletedbytes = 0;
+  //   var skips = 0;
+  //   var name = "";
+  //   var retObj = getName(rng, imageData, newData, deletedbytes);
+  //   newData = retObj.newData;
+  //   deletedbytes = retObj.deletedbytes;
+  //   name = retObj["name"];
+  //   shouldDl = confirm("want to download file with name: " + name + "?");
+  //   var body = "";
+  //   if (!shouldDl) {
+  //     return;
+  //   }
+  //   retObj = getBodyLength(rng, imageData, newData, deletedbytes);
+  //   newData = retObj.newData;
+  //   len = retObj["len"];
+
+  //   for (var i = 0; i < len; i++) {
+  //     var randnum = Math.floor(rng() * newData.length);
+  //     var redIndex = randnum - (randnum % 4);
+
+  //     if (newData[redIndex] == -1) {
+  //       i--;
+  //       continue;
+  //     }
+  //     //redIndicies.push(redIndex);
+  //     byte = ((imageData[redIndex] & 7) << 5 | (imageData[redIndex + 1] & 3) << 3 | (imageData[redIndex + 2] & 7));
+  //     body += String.fromCharCode(byte);
+  //     newData[redIndex] = -1;
+  //     deletedbytes++;
+  //   }
+  //   //alert(redIndicies);
+  //   var base64string = base64_encode(body, true);
+  //   url = "data:application/octet-stream;base64," + base64string;
+  //   var theif = document.createElement("iframe");
+  //   theif.style.display = "none";
+  //   theif.src = url;
+  //   document.getElementsByTagName("body")[0].appendChild(theif);
+  // }
