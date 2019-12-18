@@ -1,56 +1,94 @@
 //! read cover Image 
 
 function readCoverImage() {
-    var outerImg = document.getElementById("img");
-    if (!outerImg.files[0]) {
-      return;
-    }
-    var imgdata = outerImg.files[0];
-    var reader = new FileReader();
-    reader.onload = function (event) {
-      var img = new Image;
-      img.onload = function () {
-        getFileToHide(this);
-        }
-      img.src = event.target.result;
-
-    }
-    reader.readAsDataURL(imgdata);
+  var outerImg = document.getElementById("img");
+  if (!outerImg.files[0]) {
+    return;
   }
+  var imgdata = outerImg.files[0];
+  var reader = new FileReader();
+  reader.onload = function (event) {
+    var img = new Image;
+    img.onload = function () {
+      getFileToHide(this);
+    }
+    img.src = event.target.result;
+
+  }
+  reader.readAsDataURL(imgdata);
+}
+
+
+
+function readCoverImageForTextOnly() {
+  var outerImg = document.getElementById("img");
+  var text = document.getElementById('text-to-hide').value;
+  console.log(text);
+  if (!outerImg.files[0]) {
+    return;
+  }
+  var imgdata = outerImg.files[0];
+  var reader = new FileReader();
+
+  reader.onload = function (event) {
+    var img = new Image;
+    img.onload = function () {
+      encodeTextOnly(img, text);
+    }
+    img.src = event.target.result;
+
+  }
+  reader.readAsDataURL(imgdata);
+}
+
+
+
+
+
 
 
 function getFileToHide(img) {
-    var innerFile = document.getElementById("file");
-    if (!innerFile.files[0]) {
-      return;
-    }
-    innerFile = innerFile.files[0];
-    var reader = new FileReader();
-    reader.readAsBinaryString(innerFile);
-    reader.onload = function (event) {
-        console.log(event.target.result, img.src ,innerFile.name);
-     // testEncode(img, event.target.result, innerFile.name);
-      encode(img, event.target.result, innerFile.name);
+  var innerFile = document.getElementById("file");
+  if (!innerFile.files[0]) {
 
-    }
+    return;
+  }
+  innerFile = innerFile.files[0];
+  var reader = new FileReader();
+  reader.readAsBinaryString(innerFile);
+  reader.onload = function (event) {
+    //  console.log(event.target.result, img.src ,innerFile.name);
+    encode(img, event.target.result, innerFile.name);
+
+
+  }
 }
 
 
 function readEncodedImage() {
-    var outerImg = document.getElementById("img1");
+  var outerImg = document.getElementById("img1");
+  var value = document.getElementById('decode-choice').checked;
 
-    if (!outerImg.files[0]) {
-      return;
-    }
 
-    var imgData = outerImg.files[0];
-    var reader = new FileReader();
-    reader.onload = function (event) {
-      var img = new Image;
-      img.onload = function () {
-        decode(this);
-      }
-      img.src = event.target.result;
-    }
-    reader.readAsDataURL(imgData);
+  if (!outerImg.files[0]) {
+    return;
   }
+
+  var imgData = outerImg.files[0];
+  var reader = new FileReader();
+  reader.onload = function (event) {
+    var img = new Image;
+    img.onload = function () {
+      if(!value){
+        decode(this);
+
+      }else {
+               decodeTextOnly(this);
+
+      }
+
+    }
+    img.src = event.target.result;
+  }
+  reader.readAsDataURL(imgData);
+}

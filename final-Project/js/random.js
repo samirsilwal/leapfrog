@@ -1,7 +1,7 @@
  
  //! pseudo random number generator wiwth a fixed seed............here in our case password
 
-// Johannes Baagøe <baagoe@baagoe.com>, 2010
+//! Johannes Baagøe <baagoe@baagoe.com>, 2010
 
  //! Alea means random number reference from daavidbau originally algorithm created by Johannes Baagøe.
 

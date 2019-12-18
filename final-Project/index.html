@@ -1,24 +1,123 @@
 <html>
+
 <head>
-  
+
     <title>FP</title>
 </head>
+
 <body>
-    
 
-    <p>select Cover Image(PNG format):</p>
-    <p><input type="file" id="img" accept="image/*"></p>
+    <div class="main-container">
 
-    <p>select File to hide:</p>
-    <p><input type="file" id="file"></p>
+    <link rel="stylesheet" href="style.css">
+
+    <span class="title">....Image Steganography....</span>
+
+    <br>
+    <br>
+
+    <p class="intro">
+        Steganography is defined as "the art of hiding messages inside media files", in other words, it is the way in which we can hide any message (text, image, audio, …) inside any file (.mp3, .wav, .png, …). This helps people to make sure that only those who know about the presence of the message can obtain it. There are many different methods of performing steganography, but the most famous are the LSB (Least Significant Bit) ones. 
+        This kind of method modifies the LSB of different bytes with a bit from the message that will be hidden.
+        here is an example with cover file as image. user can hide any file wiithin cover image.
+        note : the size of file to be hidden must be one fourth of size of cover image
+    </p>
 
 
-    <button onclick="readCoverImage()">Encode!!!</button>
+    <div class="encode-part">
+        <p>select Cover Image(PNG format):</p>
+
+        <p>
+            <input type="file" id="img" accept="image/*" class='upload'>
+            <label for="img" class="label">Select an Image</label>
+        </p>
+        <p>
+            <label class="switch">
+                <input type="checkbox" id = 'choice' checked>
+                <span class="slider round"></span>
+            </label>
+            ENABLE FOR DIRECT TEXT ENCODIDNG ONLY!!!!
+
+        </p>
+
+        <div class="select-file" id="select-file">
+        <p>select File to hide:</p>
+        <p>
+            <input type="file" id="file" class='upload'>
+            <label for="file" class="label" >Select file to hide</label>
+
+        </p>
+        </div>
+
+        <p> 
+            <input type="text" id = "text-to-hide">
+        
+   
+          
+        </p>
+       
+
+
+        <!-- <button onclick="readCoverImage()" class='button'>Encode!!!</button> -->
+        <button onclick="init()" class='button'>Encode!!!</button>
+
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="encode-part">
+        <p>select Image to extract the text:</p>
+
+        <p>
+            <input type="file" id="img1" accept="image/png" class='upload'>
+            <label for="img1" class="label">Select image</label>
+
+        </p>
+        <p>
+            <label class="switch">
+                <input type="checkbox" id = "decode-choice">
+                <span class="slider round"></span>
+            </label>
+
+            ENABLE FOR DIRECT TEXT ONLY!!!!
+        </p>
+
+        <button onclick="readEncodedImage()" class='button'>Decode It</button>
+        <br>
+        <br>
+        <input type="text" class="text-to-display" id="text-to-display">
+
+    </div>
 
 
 
-    <input type="file" id="img1" accept="image/png">
-    <button onclick="readEncodedImage()">Decode It</button>
+
+    <!-- audio section  -->
+    <!-- 
+  <p>select Outer Audio File (wav):</p>
+  <p><input type="file" id="audio"></p>
+  <p>select innerFile:</p>
+  <p><input type="file" id="afile"></p>
+  <button onclick="makeAudiofile()">Encode</button>
+    -->
+
+
+    <!-- audio source files -->
+
+
+
+    </div>
+
+
+    <!-- image source files -->
+    <script src="./js/script.js"></script>
+
+    <script src="./js/encrypt.js"></script>
+
 
     <script src="./js/base64Encode.js"></script>
 
@@ -34,8 +133,8 @@
 
     <script src="./js/file-reader.js"></script>
 
-    <script src="./js/script.js"></script>
-
+    
 
 </body>
+
 </html>
