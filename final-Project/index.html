@@ -7,7 +7,7 @@
 
 <body>
 
-    <div class="main-container">
+    <div class="main-container" id ="main-container">
 
     <link rel="stylesheet" href="style.css">
 
@@ -36,7 +36,7 @@
                 <input type="checkbox" id = 'choice' checked>
                 <span class="slider round"></span>
             </label>
-            ENABLE FOR DIRECT TEXT ENCODIDNG ONLY!!!!
+            ENABLE FOR DIRECT TEXT ENCODING ONLY!!!!
 
         </p>
 
@@ -55,6 +55,15 @@
    
           
         </p>
+        <p>
+            <button onclick="recordAudio()" class='button'>Record It</button>
+                FOR DIRECT AUDIO RECORDING AND ENCODING!!!!
+            <br>
+            <div id="audio-player">
+                
+            </div>    
+
+        </p>
        
 
 
@@ -62,6 +71,8 @@
         <button onclick="init()" class='button'>Encode!!!</button>
 
     </div>
+
+ 
 
     <br>
     <br>
@@ -96,17 +107,6 @@
 
 
 
-    <!-- audio section  -->
-    <!-- 
-  <p>select Outer Audio File (wav):</p>
-  <p><input type="file" id="audio"></p>
-  <p>select innerFile:</p>
-  <p><input type="file" id="afile"></p>
-  <button onclick="makeAudiofile()">Encode</button>
-    -->
-
-
-    <!-- audio source files -->
 
 
 
@@ -114,6 +114,7 @@
 
 
     <!-- image source files -->
+    <script src="./js/audio.js"></script>
     <script src="./js/script.js"></script>
 
     <script src="./js/encrypt.js"></script>

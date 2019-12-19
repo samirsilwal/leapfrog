@@ -19,7 +19,11 @@
 
     canvas.style.display = "none";
 
-    var body = document.getElementsByTagName("body")[0];
+    // var body = document.getElementsByTagName("body")[0];
+    var body = document.getElementById('main-container');
+    console.log(body);
+
+
     body.appendChild(canvas);
     
     ctx = canvas.getContext("2d");
@@ -86,7 +90,7 @@
 
     canvas.style.display = "none";
 
-    var body = document.getElementsByTagName("body")[0];
+    var body = document.getElementById('main-container');
     body.appendChild(canvas);
     
     ctx = canvas.getContext("2d");
@@ -137,6 +141,7 @@
     image.data = imageData;
     ctx.putImageData(image, 0, 0);
     canvas.style.display = "";
+
 
 
  }

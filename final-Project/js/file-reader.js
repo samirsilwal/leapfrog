@@ -5,6 +5,8 @@ function readCoverImage() {
   if (!outerImg.files[0]) {
     return;
   }
+
+  
   var imgdata = outerImg.files[0];
   var reader = new FileReader();
   reader.onload = function (event) {
