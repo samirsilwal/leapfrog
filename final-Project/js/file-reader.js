@@ -2,11 +2,12 @@
 
 function readCoverImage() {
   var outerImg = document.getElementById("img");
+  var value = document.getElementById('example').checked;
   if (!outerImg.files[0]) {
     return;
   }
 
-  
+
   var imgdata = outerImg.files[0];
   var reader = new FileReader();
   reader.onload = function (event) {
@@ -14,7 +15,14 @@ function readCoverImage() {
     img.onload = function () {
       getFileToHide(this);
     }
-    img.src = event.target.result;
+    if (value) {
+      img.src = './images/download (1).png';
+
+    } else {
+      img.src = event.target.result;
+
+    }
+
 
   }
   reader.readAsDataURL(imgdata);
@@ -25,6 +33,8 @@ function readCoverImage() {
 function readCoverImageForTextOnly() {
   var outerImg = document.getElementById("img");
   var text = document.getElementById('text-to-hide').value;
+  var value = document.getElementById('example').checked;
+
   console.log(text);
   if (!outerImg.files[0]) {
     return;
@@ -37,7 +47,15 @@ function readCoverImageForTextOnly() {
     img.onload = function () {
       encodeTextOnly(img, text);
     }
-    img.src = event.target.result;
+    if (value) {
+      img.src = './images/download (1).png';
+
+    } else {
+      img.src = event.target.result;
+
+    }
+
+
 
   }
   reader.readAsDataURL(imgdata);
@@ -81,11 +99,11 @@ function readEncodedImage() {
   reader.onload = function (event) {
     var img = new Image;
     img.onload = function () {
-      if(!value){
+      if (!value) {
         decode(this);
 
-      }else {
-               decodeTextOnly(this);
+      } else {
+        decodeTextOnly(this);
 
       }
 

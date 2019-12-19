@@ -71,14 +71,17 @@ body {
     display: inline-block;
 
 }
-.select-file {
+/* .select-file {
     display: none;
-}
+} */
 .upload {
     display: none;
     opacity: 0;
 }
-
+.example {
+  font-size: 20px;
+  margin-left: 40%;
+}
 /* for toggle button */
 
 .switch {
@@ -149,7 +152,9 @@ body {
     width: 500px;
     font-size: 40px;
   }
-
+.text-to-hide {
+  display: none;
+}
 .text-to-display{
   border: 2px solid #ef494f;
   border-radius: 4px;
