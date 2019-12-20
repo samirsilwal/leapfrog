@@ -173,6 +173,7 @@ function getBodyLength(rng, imageData, newData) {
       
       byte = ((imageData[redIndex] & 7) << 5 | (imageData[redIndex + 1] & 3) << 3 | (imageData[redIndex + 2] & 7));
       len |= byte << (i * 8);
+      
       newData[redIndex] = -1;
 
     }
